@@ -5,8 +5,8 @@ import { renderAsync } from "docx-preview";
 import JSZip from "jszip";
 import * as XLSX from "xlsx";
 import "../styles/preview.css";
+import API_URL from "../api";
 
-const API_URL = "http://localhost:5000";
 
 const IMAGE_TYPES = [
     "png", "jpg", "jpeg", "gif", "webp", "svg", "bmp"

@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
 import DocumentThumbnail from "../components/DocumentThumbnail";
+import API_URL from "../api";
 
 function Home() {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/notes")
+    fetch(`${API_URL}/api/notes`)
       .then((response) => response.json())
       .then((data) => {
         setNotes(data);

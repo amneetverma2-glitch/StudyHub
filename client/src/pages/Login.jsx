@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import "../styles/auth.css";
+import API_URL from "../api";
 
 function Login() {
     const navigate = useNavigate();
@@ -42,7 +43,7 @@ const [showPassword, setShowPassword] = useState(false);
 
         try {
             const response = await fetch(
-                "http://localhost:5000/api/auth/login",
+                `${API_URL}/api/auth/login`,
                 {
                     method: "POST",
                     headers: {
@@ -83,7 +84,7 @@ const [showPassword, setShowPassword] = useState(false);
 
         try {
             const response = await fetch(
-                "http://localhost:5000/api/auth/google",
+                `${API_URL}/api/auth/google`,
                 {
                     method: "POST",
                     headers: {

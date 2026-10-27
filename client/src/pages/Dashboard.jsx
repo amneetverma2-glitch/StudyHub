@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/dashboard.css";
+import API_URL from "../api";
 
 function Dashboard() {
 
@@ -48,7 +49,7 @@ function Dashboard() {
         // -----------------------------------------
 
         fetch(
-            `http://localhost:5000/api/user/${loggedUser.id}/notes`
+           `${API_URL}/api/user/${loggedUser.id}/notes`
         )
             .then((response) => {
 
@@ -83,7 +84,7 @@ function Dashboard() {
         // -----------------------------------------
 
         fetch(
-            `http://localhost:5000/api/user/${loggedUser.id}/saved-notes`
+            `${API_URL}/api/user/${loggedUser.id}/saved-notes`
         )
             .then((response) => {
 
@@ -115,7 +116,7 @@ function Dashboard() {
         // -----------------------------------------
 
         fetch(
-            `http://localhost:5000/api/user/${loggedUser.id}/recent-activity`
+            `${API_URL}/api/user/${loggedUser.id}/recent-activity`
         )
             .then((response) => {
 

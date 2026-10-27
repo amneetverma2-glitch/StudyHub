@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import "../styles/auth.css";
+import API_URL from "../api";
 
 function Register() {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/register",
+        `${API_URL}/api/auth/register`,
         {
           method: "POST",
           headers: {
@@ -109,7 +110,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/google/register",
+        `${API_URL}/api/auth/google/register`,
         {
           method: "POST",
           headers: {

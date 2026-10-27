@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/explore.css";
 import DocumentThumbnail from "../components/DocumentThumbnail";
+import API_URL from "../api";
 function Explore() {
   const [notes, setNotes] = useState([]);
   const [search, setSearch] = useState("");
@@ -17,11 +18,9 @@ function Explore() {
   const fetchNotes = (searchValue = "") => {
     setLoading(true);
 
-    const url = searchValue.trim()
-      ? `http://localhost:5000/api/notes?search=${encodeURIComponent(
-          searchValue
-        )}`
-      : "http://localhost:5000/api/notes";
+  const url = searchValue.trim()
+  ? `${API_URL}/api/notes?search=${encodeURIComponent(searchValue)}`
+  : `${API_URL}/api/notes`;
 
     fetch(url)
       .then((response) => {
@@ -112,7 +111,7 @@ function Explore() {
     // Log preview activity
     try {
       const response = await fetch(
-        `http://localhost:5000/api/notes/${note.id}/preview`,
+        `${API_URL}/api/notes/${note.id}/preview`,
         {
           method: "POST",
           headers: {
@@ -173,9 +172,9 @@ function Explore() {
     }
 
     window.location.href =
-      `http://localhost:5000/api/notes/${note.id}/download?user_id=${encodeURIComponent(
-        userId
-      )}`;
+     `${API_URL}/api/notes/${note.id}/download?user_id=${encodeURIComponent(
+  userId
+)}`
   };
 
   // =========================================
@@ -212,7 +211,7 @@ function Explore() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/notes/${note.id}/save`,
+        `${API_URL}/api/notes/${note.id}/save`,
         {
           method: "POST",
           headers: {

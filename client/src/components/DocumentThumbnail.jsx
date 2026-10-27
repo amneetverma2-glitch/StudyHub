@@ -4,6 +4,7 @@ import * as pdfjsLib from "pdfjs-dist";
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import JSZip from "jszip";
 import mammoth from "mammoth";
+import API_URL from "../api";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
@@ -134,7 +135,7 @@ function DocumentThumbnail({ note, fallback }) {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/notes/${note.id}/file`
+          `${API_URL}/api/notes/${note.id}/file`
         );
 
         if (!response.ok) {

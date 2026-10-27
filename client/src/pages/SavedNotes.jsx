@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/savedNotes.css";
+import API_URL from "../api";
 
 function SavedNotes() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ function SavedNotes() {
       return;
     }
 
-    fetch(`http://localhost:5000/api/user/${userId}/saved-notes`)
+    fetch(`${API_URL}/api/user/${userId}/saved-notes`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to load saved notes");
@@ -51,7 +52,7 @@ function SavedNotes() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/notes/${noteId}/save`,
+        `${API_URL}/api/notes/${noteId}/save`,
         {
           method: "DELETE",
           headers: {
@@ -409,7 +410,7 @@ function SavedNotes() {
 
                   <a
                     className="download-btn"
-                    href={`http://localhost:5000/api/notes/${note.id}/download?user_id=${userId}`}
+                    href={`${API_URL}/api/notes/${note.id}/download?user_id=${userId}`}
                   >
                     Download
                   </a>

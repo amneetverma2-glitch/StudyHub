@@ -3,8 +3,9 @@ import { useState, useEffect, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/dashboard.css";
 import "../styles/Community.css";
+import API_URL from "../api";
 
-const API = "http://localhost:5000/api/community";
+const API = `${API_URL}/api/community`;
 
 const topics = [
   "All Topics",
@@ -115,7 +116,7 @@ function Community() {
       setQuestions(Array.isArray(data) ? data : []);
     } catch (err) {
       setError(
-        `${err.message}. Check that your backend is running on port 5000.`
+        `${err.message}. Please check your internet connection and try again.`
       );
     } finally {
       setLoading(false);

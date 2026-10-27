@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/myNotes.css";
+import API_URL from "../api";
 
 function MyNotes() {
 
@@ -43,7 +44,7 @@ function MyNotes() {
 
 
         fetch(
-            `http://localhost:5000/api/user/${loggedUser.id}/notes`
+           `${API_URL}/api/user/${loggedUser.id}/notes`
         )
             .then((response) => {
 
@@ -163,8 +164,8 @@ const handlePreview = (note) => {
 
 
         window.location.href =
-            `http://localhost:5000/api/notes/${note.id}/download?user_id=${loggedUser.id}`;
-    };
+    `${API_URL}/api/notes/${note.id}/download?user_id=${loggedUser.id}`;
+};
 
 
     // =========================================

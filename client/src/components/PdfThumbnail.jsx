@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import * as pdfjsLib from "pdfjs-dist";
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import API_URL from "../api";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
@@ -27,7 +28,7 @@ function PdfThumbnail({ note, fallback }) {
         setFailed(false);
 
         const response = await fetch(
-          `http://localhost:5000/api/notes/${note.id}/file`
+          `${API_URL}/api/notes/${note.id}/file`
         );
 
         if (!response.ok) {

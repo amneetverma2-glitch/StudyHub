@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/upload.css";
-
+import API_URL from "../api";
 function Upload() {
 
     const navigate = useNavigate();
@@ -73,7 +73,7 @@ function Upload() {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/notes/upload",
+                `${API_URL}/api/notes/upload`,
                 {
                     method: "POST",
                     body: uploadData
