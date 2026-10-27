@@ -1,0 +1,901 @@
+
+/* ==========================================
+   STUDYHUB — GLOBAL THEME REFRESH
+   Light: Ivory + Sage
+   Dark: Midnight + Neon
+   ========================================== */
+
+:root {
+  --sh-bg: #f7f4ec;
+  --sh-surface: #fffdf8;
+  --sh-surface-2: #f0eee4;
+  --sh-text: #23352d;
+  --sh-muted: #718076;
+  --sh-border: #e2e4d8;
+  --sh-primary: #718b68;
+  --sh-primary-hover: #5c7554;
+  --sh-accent: #287e79;
+  --sh-shadow: 0 18px 48px rgba(45, 59, 43, 0.09);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --sh-bg: #090e18;
+  --sh-surface: #111a28;
+  --sh-surface-2: #172334;
+  --sh-text: #edf7f0;
+  --sh-muted: #9cacc0;
+  --sh-border: #26374a;
+  --sh-primary: #c7ff45;
+  --sh-primary-hover: #d8ff78;
+  --sh-accent: #41e8ef;
+  --sh-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  color-scheme: dark;
+}
+
+/* GLOBAL */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--sh-bg) !important;
+  color: var(--sh-text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.home-page,
+.explore-page,
+.auth-page,
+.saved-notes-page,
+.my-notes-page,
+.dashboard-page,
+.settings-page,
+.upload-page,
+.preview-page {
+  background: var(--sh-bg) !important;
+  color: var(--sh-text) !important;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* SHARED CARDS */
+
+.auth-card,
+.image-card,
+.resource-card,
+.explore-card,
+.saved-notes-container,
+.saved-card,
+.dashboard-card,
+.stat-card,
+.settings-card,
+.upload-card,
+.preview-panel,
+.review-card,
+.step,
+.summary-modal {
+  background: var(--sh-surface) !important;
+  color: var(--sh-text) !important;
+  border: 1px solid var(--sh-border) !important;
+  box-shadow: var(--sh-shadow);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navbar,
+.explore-header,
+.search-section,
+.saved-notes-header {
+  background: var(--sh-surface) !important;
+  border-color: var(--sh-border) !important;
+}
+
+/* TEXT COLORS */
+
+.nav-links a,
+.login-btn,
+.logo,
+.hero-content h1,
+.section-heading h2,
+.section-title h2,
+.explore-header h1,
+.results-heading h2,
+.auth-card h1,
+.auth-brand,
+.saved-notes-page h1 {
+  color: var(--sh-text) !important;
+}
+
+.hero-content h1 span,
+.logo span {
+  color: var(--sh-primary) !important;
+}
+
+.hero-small-title,
+.explore-label,
+.auth-brand span,
+.section-heading p,
+.section-title p {
+  color: var(--sh-accent) !important;
+}
+
+/* HERO SECTION */
+
+.hero-section {
+  min-height: 590px;
+  gap: clamp(32px, 5vw, 76px);
+  padding-top: 76px;
+  padding-bottom: 76px;
+}
+
+.hero-content {
+  animation: sh-slide-up 0.75s
+    cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.hero-content h1 {
+  max-width: 680px;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  font-size: clamp(2.7rem, 5vw, 4.6rem);
+}
+
+.hero-description {
+  max-width: 570px;
+  line-height: 1.8;
+}
+
+.hero-image {
+  animation: sh-float-in 0.9s 0.12s both;
+}
+
+.image-card {
+  overflow: hidden;
+  border-radius: 24px !important;
+  transform: rotate(1deg);
+}
+
+.image-card:hover {
+  transform: translateY(-8px) rotate(0deg);
+}
+
+.image-card img {
+  transition: transform 0.7s
+    cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.image-card:hover img {
+  transform: scale(1.035);
+}
+
+/* BUTTONS */
+
+.primary-btn,
+.get-started-btn,
+.auth-submit-btn,
+.search-form button,
+.explore-preview-btn,
+.preview-btn,
+.download-btn,
+.explore-summary-btn,
+.nav-actions a,
+.back-home-btn,
+.dashboard-page button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease !important;
+}
+
+.primary-btn,
+.get-started-btn,
+.auth-submit-btn,
+.search-form button,
+.explore-preview-btn,
+.download-btn {
+  background: var(--sh-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--sh-primary) !important;
+}
+
+/* DARK MODE BUTTON TEXT */
+
+:root[data-theme="dark"] .primary-btn,
+:root[data-theme="dark"] .get-started-btn,
+:root[data-theme="dark"] .auth-submit-btn,
+:root[data-theme="dark"] .search-form button,
+:root[data-theme="dark"] .explore-preview-btn,
+:root[data-theme="dark"] .download-btn {
+  color: #10170b !important;
+}
+
+.secondary-btn,
+.explore-download-btn,
+.explore-save-btn,
+.preview-btn {
+  background: transparent !important;
+  color: var(--sh-primary) !important;
+  border-color: var(--sh-primary) !important;
+}
+
+.primary-btn:hover,
+.get-started-btn:hover,
+.auth-submit-btn:hover,
+.search-form button:hover,
+.explore-preview-btn:hover,
+.download-btn:hover,
+.preview-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(68, 95, 59, 0.18);
+}
+
+/* INPUTS */
+
+input,
+select,
+textarea {
+  background: var(--sh-surface) !important;
+  color: var(--sh-text) !important;
+  border-color: var(--sh-border) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--sh-muted) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--sh-accent) !important;
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--sh-accent) 18%, transparent) !important;
+}
+
+/* CARD HOVER EFFECTS */
+
+.resource-card:hover,
+.explore-card:hover,
+.review-card:hover,
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sh-shadow);
+}
+
+.explore-thumbnail {
+  background: var(--sh-surface-2) !important;
+}
+
+.explore-card-content,
+.image-card-content {
+  background: var(--sh-surface) !important;
+}
+
+.footer {
+  background: var(--sh-surface-2) !important;
+  color: var(--sh-text) !important;
+}
+
+/* STAGGERED ENTRANCE ANIMATIONS */
+
+.resource-grid > *,
+.explore-grid > *,
+.review-grid > *,
+.steps > * {
+  animation: sh-slide-up 0.55s both;
+}
+
+.resource-grid > *:nth-child(2),
+.explore-grid > *:nth-child(2),
+.review-grid > *:nth-child(2) {
+  animation-delay: 0.07s;
+}
+
+.resource-grid > *:nth-child(3),
+.explore-grid > *:nth-child(3),
+.review-grid > *:nth-child(3) {
+  animation-delay: 0.14s;
+}
+
+.resource-grid > *:nth-child(4),
+.explore-grid > *:nth-child(4),
+.review-grid > *:nth-child(4) {
+  animation-delay: 0.21s;
+}
+
+/* NEON ACCENTS — DARK MODE */
+
+:root[data-theme="dark"] .primary-btn:hover,
+:root[data-theme="dark"] .get-started-btn:hover,
+:root[data-theme="dark"] .auth-submit-btn:hover,
+:root[data-theme="dark"] .search-form button:hover {
+  box-shadow:
+    0 0 0 1px rgba(199, 255, 69, 0.45),
+    0 0 24px rgba(199, 255, 69, 0.18);
+}
+
+:root[data-theme="dark"] .image-card,
+:root[data-theme="dark"] .resource-card:hover,
+:root[data-theme="dark"] .explore-card:hover {
+  border-color: #344b5d !important;
+}
+
+:root[data-theme="dark"] .hero-content h1 span {
+  text-shadow: 0 0 28px rgba(199, 255, 69, 0.14);
+}
+
+/* ANIMATION KEYFRAMES */
+
+@keyframes sh-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sh-float-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 850px) {
+  .hero-section {
+    grid-template-columns: 1fr !important;
+    min-height: auto;
+    gap: 36px;
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.4rem, 9vw, 3.7rem);
+  }
+
+  .hero-image {
+    max-width: 560px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+}
+
+/* ACCESSIBILITY: REDUCE MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================
+   STUDYHUB — SMOOTH ANIMATION UPGRADE
+   Paste at the END of theme.css
+   ========================================== */
+
+/* Smoother transitions everywhere */
+
+* {
+  scroll-behavior: smooth;
+}
+
+.resource-card,
+.explore-card,
+.saved-card,
+.stat-card,
+.dashboard-card,
+.settings-card,
+.upload-card,
+.review-card,
+.step,
+.auth-card,
+.image-card,
+.preview-panel,
+.saved-notes-container,
+.summary-modal,
+[class*="card"] {
+  transition:
+    opacity 0.45s ease,
+    transform 0.35s cubic-bezier(0.2, 0.75, 0.25, 1),
+    box-shadow 0.35s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease !important;
+}
+
+/* Longer fade + slide entrance */
+
+@keyframes sh-slow-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  65% {
+    opacity: 0.85;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sh-soft-zoom {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.965);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sh-heading-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes sh-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(199, 255, 69, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 22px rgba(199, 255, 69, 0.12);
+  }
+}
+
+/* Hero animation */
+
+.hero-content > * {
+  animation: sh-heading-reveal 1.1s
+    cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.hero-content > *:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.hero-content > *:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.hero-content > *:nth-child(4) {
+  animation-delay: 0.36s;
+}
+
+.hero-image,
+.image-card {
+  animation: sh-soft-zoom 1.15s
+    cubic-bezier(0.2, 0.75, 0.25, 1) both;
+  animation-delay: 0.16s;
+}
+
+/* All common cards animate on page entry */
+
+.resource-card,
+.explore-card,
+.saved-card,
+.stat-card,
+.dashboard-card,
+.settings-card,
+.upload-card,
+.review-card,
+.step,
+.auth-card,
+.preview-panel,
+.saved-notes-container,
+.summary-modal,
+[class*="card"] {
+  animation: sh-slow-fade 1.1s
+    cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+/* Stagger card animations */
+
+.resource-grid > *:nth-child(1),
+.explore-grid > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.resource-grid > *:nth-child(2),
+.explore-grid > *:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.resource-grid > *:nth-child(3),
+.explore-grid > *:nth-child(3) {
+  animation-delay: 0.25s;
+}
+
+.resource-grid > *:nth-child(4),
+.explore-grid > *:nth-child(4) {
+  animation-delay: 0.35s;
+}
+
+.resource-grid > *:nth-child(5),
+.explore-grid > *:nth-child(5) {
+  animation-delay: 0.45s;
+}
+
+.resource-grid > *:nth-child(n+6),
+.explore-grid > *:nth-child(n+6) {
+  animation-delay: 0.5s;
+}
+
+.review-grid > *:nth-child(1),
+.steps > *:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.review-grid > *:nth-child(2),
+.steps > *:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.review-grid > *:nth-child(3),
+.steps > *:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+/* Card hover interaction */
+
+.resource-card:hover,
+.explore-card:hover,
+.saved-card:hover,
+.stat-card:hover,
+.dashboard-card:hover,
+.settings-card:hover,
+.upload-card:hover,
+.review-card:hover,
+.step:hover,
+.preview-panel:hover,
+[class*="card"]:hover {
+  transform: translateY(-7px) scale(1.012);
+  box-shadow: 0 20px 42px rgba(30, 45, 35, 0.13);
+  border-color: var(--sh-primary) !important;
+}
+
+/* Dark mode card hover glow */
+
+:root[data-theme="dark"] .resource-card:hover,
+:root[data-theme="dark"] .explore-card:hover,
+:root[data-theme="dark"] .saved-card:hover,
+:root[data-theme="dark"] .stat-card:hover,
+:root[data-theme="dark"] .dashboard-card:hover,
+:root[data-theme="dark"] .settings-card:hover,
+:root[data-theme="dark"] .upload-card:hover,
+:root[data-theme="dark"] .review-card:hover,
+:root[data-theme="dark"] [class*="card"]:hover {
+  box-shadow:
+    0 0 0 1px rgba(199, 255, 69, 0.12),
+    0 16px 36px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons: hover + press */
+
+button,
+.primary-btn,
+.secondary-btn,
+.get-started-btn,
+.auth-submit-btn,
+.nav-actions a {
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease !important;
+}
+
+button:hover,
+.primary-btn:hover,
+.secondary-btn:hover,
+.get-started-btn:hover,
+.auth-submit-btn:hover,
+.nav-actions a:hover {
+  filter: brightness(1.06);
+}
+
+button:active,
+.primary-btn:active,
+.secondary-btn:active,
+.get-started-btn:active,
+.auth-submit-btn:active {
+  transform: scale(0.97);
+}
+
+/* Images gently zoom on hover */
+
+.image-card img,
+.resource-card img,
+.explore-card img,
+[class*="thumbnail"] img {
+  transition: transform 0.6s ease;
+}
+
+.image-card:hover img,
+.resource-card:hover img,
+.explore-card:hover img {
+  transform: scale(1.045);
+}
+
+/* Navbar interaction */
+
+.navbar {
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.nav-links a {
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--sh-accent) !important;
+}
+
+/* Login/register card entrance */
+
+.auth-card {
+  animation: sh-soft-zoom 1.1s
+    cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.auth-card input {
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.auth-card input:focus {
+  transform: translateY(-1px);
+}
+
+/* Dark mode neon primary glow */
+
+:root[data-theme="dark"] .primary-btn:hover,
+:root[data-theme="dark"] .get-started-btn:hover,
+:root[data-theme="dark"] .auth-submit-btn:hover {
+  animation: sh-glow-pulse 1.5s ease-in-out infinite;
+}
+
+/* Respect accessibility settings */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile: keep animations subtle */
+
+@media (max-width: 768px) {
+  .resource-card:hover,
+  .explore-card:hover,
+  .saved-card:hover,
+  .stat-card:hover,
+  .dashboard-card:hover,
+  [class*="card"]:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* ==========================================
+   STUDYHUB THEME CONSISTENCY FIX
+   ========================================== */
+
+/* HOME PAGE — LIGHT MODE */
+.home-page {
+  background: var(--sh-bg) !important;
+  color: var(--sh-text) !important;
+}
+
+.home-page .hero-section,
+.home-page .resources-section,
+.home-page .reviews-section {
+  background: var(--sh-bg) !important;
+  color: var(--sh-text) !important;
+}
+
+.home-page .how-section {
+  background: var(--sh-surface-2) !important;
+  color: var(--sh-text) !important;
+}
+
+.home-page .footer {
+  background: var(--sh-surface-2) !important;
+  color: var(--sh-text) !important;
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page h4,
+.home-page .footer-brand h2,
+.home-page .footer-column h4 {
+  color: var(--sh-text) !important;
+}
+
+.home-page p,
+.home-page .step p,
+.home-page .review-card p,
+.home-page .footer-brand p,
+.home-page .footer-brand small,
+.home-page .footer-column a,
+.home-page .image-card-content span {
+  color: var(--sh-muted) !important;
+}
+
+.home-page .step,
+.home-page .review-card,
+.home-page .resource-card,
+.home-page .image-card {
+  background: var(--sh-surface) !important;
+  color: var(--sh-text) !important;
+  border-color: var(--sh-border) !important;
+}
+
+.home-page .section-heading > a,
+.home-page .review-card a {
+  color: var(--sh-accent) !important;
+}
+
+/* SAVED NOTES — BOTH THEMES */
+.saved-page {
+  background: var(--sh-bg) !important;
+  color: var(--sh-text) !important;
+}
+
+.saved-page .saved-stat-card,
+.saved-page .saved-container {
+  background: var(--sh-surface) !important;
+  color: var(--sh-text) !important;
+  border-color: var(--sh-border) !important;
+}
+
+.saved-page .saved-container-header {
+  background: var(--sh-surface) !important;
+  border-color: var(--sh-border) !important;
+}
+
+.saved-page h1,
+.saved-page h2,
+.saved-page h3,
+.saved-page .saved-info h3,
+.saved-page .download-info strong,
+.saved-page .saved-stat-card strong {
+  color: var(--sh-text) !important;
+}
+
+.saved-page p,
+.saved-page .saved-header p,
+.saved-page .saved-container-header p,
+.saved-page .saved-stat-card span,
+.saved-page .saved-info .description,
+.saved-page .download-info span,
+.saved-page .note-meta {
+  color: var(--sh-muted) !important;
+}
+
+.saved-page .saved-row {
+  background: var(--sh-surface) !important;
+  border-color: var(--sh-border) !important;
+}
+
+.saved-page .saved-row:hover {
+  background: var(--sh-surface-2) !important;
+}
+
+.saved-page .resource-count,
+.saved-page .preview-btn,
+.saved-page .remove-btn {
+  background: var(--sh-surface) !important;
+  color: var(--sh-text) !important;
+  border-color: var(--sh-border) !important;
+}
+
+.saved-page .file-icon {
+  background: var(--sh-surface-2) !important;
+  color: var(--sh-primary) !important;
+}
+
+/* DARK MODE — HOME SECTION OVERRIDES */
+:root[data-theme="dark"] .home-page .hero-section,
+:root[data-theme="dark"] .home-page .resources-section,
+:root[data-theme="dark"] .home-page .reviews-section {
+  background: var(--sh-bg) !important;
+}
+
+:root[data-theme="dark"] .home-page .how-section,
+:root[data-theme="dark"] .home-page .footer {
+  background: var(--sh-surface-2) !important;
+}
+
+:root[data-theme="dark"] .home-page .step,
+:root[data-theme="dark"] .home-page .review-card,
+:root[data-theme="dark"] .home-page .resource-card,
+:root[data-theme="dark"] .home-page .image-card {
+  background: var(--sh-surface) !important;
+  border-color: var(--sh-border) !important;
+}
+
+:root[data-theme="dark"] .home-page h1,
+:root[data-theme="dark"] .home-page h2,
+:root[data-theme="dark"] .home-page h3,
+:root[data-theme="dark"] .home-page h4,
+:root[data-theme="dark"] .home-page .footer-brand h2,
+:root[data-theme="dark"] .home-page .footer-column h4 {
+  color: var(--sh-text) !important;
+}
+
+/* SETTINGS — USE THE GLOBAL THEME PALETTE */
+:root[data-theme="dark"] .settings-page {
+  --settings-bg: var(--sh-bg);
+  --settings-card: var(--sh-surface);
+  --settings-text: var(--sh-text);
+  --settings-muted: var(--sh-muted);
+  --settings-border: var(--sh-border);
+  --settings-primary: var(--sh-primary);
+  --settings-hover: var(--sh-surface-2);
+}
+
+/* Smooth color changes */
+body,
+.home-page,
+.saved-page,
+.settings-page,
+.saved-stat-card,
+.saved-container,
+.saved-row,
+.settings-card {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}

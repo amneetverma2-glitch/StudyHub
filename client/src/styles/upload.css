@@ -1,0 +1,301 @@
+/* =========================================
+   STUDYHUB UPLOAD PAGE
+========================================= */
+
+.upload-page {
+    min-height: 100vh;
+    background: #f7f8fa;
+}
+
+.upload-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+/* Header */
+
+.upload-header {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+}
+
+.upload-back {
+    color: #18243d;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.upload-back:hover {
+    text-decoration: underline;
+}
+
+.upload-brand {
+    font-size: 22px;
+    font-weight: 800;
+
+    color: #18243d;
+}
+
+.upload-brand span {
+    color: #5661c9;
+}
+
+
+/* Card */
+
+.upload-card {
+    background: #ffffff;
+
+    border: 1px solid #e0e3e8;
+    border-radius: 6px;
+
+    padding: 35px;
+
+    box-shadow: 0 8px 30px rgba(30, 40, 70, 0.04);
+}
+
+
+/* Title */
+
+.upload-title {
+    margin-bottom: 28px;
+}
+
+.upload-title p {
+    margin: 0 0 7px;
+
+    color: #5661c9;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+}
+
+.upload-title h1 {
+    margin: 0 0 8px;
+
+    color: #17233d;
+
+    font-size: 27px;
+}
+
+.upload-title span {
+    color: #727c8f;
+
+    font-size: 12px;
+}
+
+
+/* Messages */
+
+.upload-error,
+.upload-success {
+    padding: 11px 14px;
+
+    border-radius: 4px;
+
+    margin-bottom: 20px;
+
+    font-size: 12px;
+}
+
+.upload-error {
+    background: #fff0f0;
+    color: #c62828;
+
+    border: 1px solid #ffd0d0;
+}
+
+.upload-success {
+    background: #eefaf7;
+    color: #147c70;
+
+    border: 1px solid #c7eee8;
+}
+
+
+/* Form */
+
+.upload-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.upload-field {
+    margin-bottom: 20px;
+}
+
+.upload-field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #26334d;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.upload-field input,
+.upload-field select,
+.upload-field textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d8dce3;
+
+    border-radius: 4px;
+
+    padding: 11px 12px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #26334d;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    transition: border 0.2s;
+}
+
+.upload-field input:focus,
+.upload-field select:focus,
+.upload-field textarea:focus {
+    border-color: #5661c9;
+}
+
+.upload-field textarea {
+    resize: vertical;
+
+    min-height: 110px;
+}
+
+.upload-field input::placeholder,
+.upload-field textarea::placeholder {
+    color: #9aa1af;
+}
+
+
+/* File */
+
+.file-upload {
+    border: 1px dashed #bfc5d0;
+
+    background: #fafbfc;
+
+    border-radius: 5px;
+
+    padding: 20px;
+
+    position: relative;
+}
+
+.file-upload input {
+    width: 100%;
+
+    border: none;
+
+    padding: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.file-upload-text {
+    margin-top: 8px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.file-upload-text strong {
+    color: #26334d;
+
+    font-size: 11px;
+}
+
+.file-upload-text span {
+    color: #858d9d;
+
+    font-size: 9px;
+}
+
+
+/* Submit */
+
+.upload-submit {
+    width: 100%;
+
+    border: none;
+
+    background: #18243d;
+    color: white;
+
+    padding: 13px;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+}
+
+.upload-submit:hover {
+    background: #101a30;
+}
+
+.upload-submit:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* Responsive */
+
+@media (max-width: 650px) {
+
+    .upload-container {
+        width: 92%;
+    }
+
+    .upload-card {
+        padding: 25px 20px;
+    }
+
+    .upload-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .upload-header {
+        padding: 0;
+    }
+
+    .upload-title h1 {
+        font-size: 23px;
+    }
+}

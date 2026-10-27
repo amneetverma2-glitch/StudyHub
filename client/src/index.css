@@ -1,0 +1,390 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#F8FAFC;
+}
+:root {
+  --page-bg: #f6f7fb;
+  --card-bg: #ffffff;
+  --text-color: #172544;
+  --muted-color: #75829c;
+  --border-color: #e1e6ef;
+  --icon-bg: #eef0ff;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #111827;
+  --card-bg: #1f2937;
+  --text-color: #f3f4f6;
+  --muted-color: #aab5c5;
+  --border-color: #374151;
+  --icon-bg: #303b58;
+}
+
+:root[data-theme="dark"] body {
+  background: var(--page-bg);
+  color: var(--text-color);
+}
+
+/* ==========================================
+   STUDYHUB GLOBAL THEME
+   Midnight Blue + Slate + Indigo
+========================================== */
+
+:root {
+  color-scheme: light;
+
+  --page-bg: #f5f7fc;
+  --surface: #ffffff;
+  --surface-secondary: #eef2f9;
+  --text-primary: #172747;
+  --text-secondary: #7182a1;
+  --border: #e0e6f0;
+  --accent: #5b63e8;
+  --accent-hover: #484fd1;
+  --sidebar-bg: #ffffff;
+  --input-bg: #ffffff;
+  --hover-bg: #eef0ff;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --page-bg: #182235;
+  --surface: #243249;
+  --surface-secondary: #303f5b;
+  --text-primary: #f1f5ff;
+  --text-secondary: #bdc9dc;
+  --border: #3b4b65;
+  --accent: #a5adff;
+  --accent-hover: #bbc1ff;
+  --sidebar-bg: #202d42;
+  --input-bg: #1e2a3f;
+  --hover-bg: #34435f;
+}
+
+/* Global base */
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Main page backgrounds */
+
+:root[data-theme="dark"] .dashboard-page,
+:root[data-theme="dark"] .explore-page,
+:root[data-theme="dark"] .my-notes-page,
+:root[data-theme="dark"] .saved-page,
+:root[data-theme="dark"] .upload-container,
+:root[data-theme="dark"] .preview-page,
+:root[data-theme="dark"] .home-page,
+:root[data-theme="dark"] .auth-page,
+:root[data-theme="dark"] .settings-page {
+  background: var(--page-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Sidebars and topbars */
+
+:root[data-theme="dark"] .dashboard-sidebar,
+:root[data-theme="dark"] .dashboard-topbar,
+:root[data-theme="dark"] .my-notes-sidebar,
+:root[data-theme="dark"] .my-notes-topbar,
+:root[data-theme="dark"] .settings-sidebar,
+:root[data-theme="dark"] .navbar,
+:root[data-theme="dark"] .explore-header,
+:root[data-theme="dark"] .preview-header {
+  background: var(--sidebar-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+/* Cards and panels */
+
+:root[data-theme="dark"] .stat-card,
+:root[data-theme="dark"] .dashboard-card,
+:root[data-theme="dark"] .explore-card,
+:root[data-theme="dark"] .my-note-item,
+:root[data-theme="dark"] .saved-stat-card,
+:root[data-theme="dark"] .saved-row,
+:root[data-theme="dark"] .upload-card,
+:root[data-theme="dark"] .auth-card,
+:root[data-theme="dark"] .image-card,
+:root[data-theme="dark"] .resource-card,
+:root[data-theme="dark"] .settings-card,
+:root[data-theme="dark"] .settings-footer {
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+/* Resource lists and nested sections */
+
+:root[data-theme="dark"] .my-notes-list,
+:root[data-theme="dark"] .my-notes-content,
+:root[data-theme="dark"] .saved-container,
+:root[data-theme="dark"] .explore-content,
+:root[data-theme="dark"] .explore-results,
+:root[data-theme="dark"] .search-section,
+:root[data-theme="dark"] .search-container {
+  background: var(--page-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Headings */
+
+:root[data-theme="dark"] .dashboard-heading h1,
+:root[data-theme="dark"] .card-header h2,
+:root[data-theme="dark"] .dashboard-card h2,
+:root[data-theme="dark"] .explore-header h1,
+:root[data-theme="dark"] .explore-results h2,
+:root[data-theme="dark"] .explore-card h3,
+:root[data-theme="dark"] .my-notes-heading h1,
+:root[data-theme="dark"] .my-notes-card-header h2,
+:root[data-theme="dark"] .my-note-info h3,
+:root[data-theme="dark"] .saved-header h1,
+:root[data-theme="dark"] .saved-container-header h2,
+:root[data-theme="dark"] .saved-info h3,
+:root[data-theme="dark"] .upload-title h1,
+:root[data-theme="dark"] .auth-card h1,
+:root[data-theme="dark"] .hero-content h1,
+:root[data-theme="dark"] .section-heading h2,
+:root[data-theme="dark"] .section-title h2,
+:root[data-theme="dark"] .settings-header h1,
+:root[data-theme="dark"] .settings-section-heading h2 {
+  color: var(--text-primary) !important;
+}
+
+/* Descriptions and secondary text */
+
+:root[data-theme="dark"] .dashboard-welcome,
+:root[data-theme="dark"] .stat-content span,
+:root[data-theme="dark"] .stat-content small,
+:root[data-theme="dark"] .card-header p,
+:root[data-theme="dark"] .explore-header p,
+:root[data-theme="dark"] .explore-info,
+:root[data-theme="dark"] .my-notes-heading p,
+:root[data-theme="dark"] .my-notes-stat small,
+:root[data-theme="dark"] .my-notes-card-header p,
+:root[data-theme="dark"] .saved-header p,
+:root[data-theme="dark"] .saved-info .description,
+:root[data-theme="dark"] .upload-title p,
+:root[data-theme="dark"] .auth-subtitle,
+:root[data-theme="dark"] .hero-description,
+:root[data-theme="dark"] .section-heading p,
+:root[data-theme="dark"] .section-title p,
+:root[data-theme="dark"] .settings-header > p,
+:root[data-theme="dark"] .settings-section-heading p,
+:root[data-theme="dark"] .settings-user-info span {
+  color: var(--text-secondary) !important;
+}
+
+/* Inputs and search fields */
+
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] .dashboard-search,
+:root[data-theme="dark"] .my-notes-search,
+:root[data-theme="dark"] .search-form input {
+  background: var(--input-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+:root[data-theme="dark"] input::placeholder,
+:root[data-theme="dark"] textarea::placeholder {
+  color: var(--text-secondary) !important;
+}
+
+/* Navigation */
+
+:root[data-theme="dark"] .sidebar-link,
+:root[data-theme="dark"] .my-notes-nav-link,
+:root[data-theme="dark"] .settings-nav-link,
+:root[data-theme="dark"] .nav-links a {
+  color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .sidebar-link:hover,
+:root[data-theme="dark"] .my-notes-nav-link:hover,
+:root[data-theme="dark"] .settings-nav-link:hover {
+  background: var(--hover-bg) !important;
+}
+
+/* Selected navigation item */
+
+:root[data-theme="dark"] .sidebar-link.active,
+:root[data-theme="dark"] .my-notes-nav-link.active,
+:root[data-theme="dark"] .settings-nav-active {
+  background: var(--hover-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Buttons */
+
+:root[data-theme="dark"] .settings-secondary-btn,
+:root[data-theme="dark"] .back-home-btn,
+:root[data-theme="dark"] .secondary-btn,
+:root[data-theme="dark"] .preview-back {
+  background: var(--surface-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+/* Settings theme selectors */
+
+:root[data-theme="dark"] .settings-theme-option {
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+:root[data-theme="dark"] .settings-theme-option.selected {
+  background: var(--hover-bg) !important;
+  border-color: var(--accent) !important;
+}
+
+/* Labels and form text */
+
+:root[data-theme="dark"] .upload-field label,
+:root[data-theme="dark"] .form-group label,
+:root[data-theme="dark"] .settings-field > span {
+  color: var(--text-primary) !important;
+}
+
+/* Tables and separators */
+
+:root[data-theme="dark"] table,
+:root[data-theme="dark"] th,
+:root[data-theme="dark"] td,
+:root[data-theme="dark"] hr {
+  border-color: var(--border);
+}
+
+/* Hover feedback */
+
+:root[data-theme="dark"] .explore-card:hover,
+:root[data-theme="dark"] .my-note-item:hover,
+:root[data-theme="dark"] .saved-row:hover {
+  border-color: var(--accent) !important;
+}
+
+/* ==========================================
+   FIX DASHBOARD + MY NOTES DARK MODE
+========================================== */
+
+/* Dashboard and My Notes stat cards */
+:root[data-theme="dark"] .dashboard-page .stat-card,
+:root[data-theme="dark"] .dashboard-page .dashboard-stat-card,
+:root[data-theme="dark"] .my-notes-page .stat-card,
+:root[data-theme="dark"] .my-notes-page .my-notes-stat,
+:root[data-theme="dark"] .my-notes-page .my-notes-stat-card {
+  background: #243249 !important;
+  color: #f1f5ff !important;
+  border-color: #3b4b65 !important;
+}
+
+/* Stat numbers */
+:root[data-theme="dark"] .stat-content h3,
+:root[data-theme="dark"] .stat-content h2,
+:root[data-theme="dark"] .stat-content strong,
+:root[data-theme="dark"] .stat-number,
+:root[data-theme="dark"] .my-notes-stat h3,
+:root[data-theme="dark"] .my-notes-stat h2,
+:root[data-theme="dark"] .my-notes-stat strong {
+  color: #f1f5ff !important;
+}
+
+/* Stat labels and descriptions */
+:root[data-theme="dark"] .stat-content p,
+:root[data-theme="dark"] .stat-content span,
+:root[data-theme="dark"] .stat-content small,
+:root[data-theme="dark"] .my-notes-stat p,
+:root[data-theme="dark"] .my-notes-stat span,
+:root[data-theme="dark"] .my-notes-stat small {
+  color: #bdc9dc !important;
+}
+
+/* My Notes uploaded materials container */
+:root[data-theme="dark"] .my-notes-page .my-notes-card,
+:root[data-theme="dark"] .my-notes-page .my-notes-panel,
+:root[data-theme="dark"] .my-notes-page .my-notes-content-card,
+:root[data-theme="dark"] .my-notes-page .my-notes-list-container {
+  background: #243249 !important;
+  color: #f1f5ff !important;
+  border-color: #3b4b65 !important;
+}
+
+/* Uploaded Materials heading area */
+:root[data-theme="dark"] .my-notes-page .my-notes-card-header,
+:root[data-theme="dark"] .my-notes-page .my-notes-panel-header,
+:root[data-theme="dark"] .my-notes-page .my-notes-list-header {
+  background: #202d42 !important;
+  color: #f1f5ff !important;
+  border-color: #3b4b65 !important;
+}
+
+/* Resource rows */
+:root[data-theme="dark"] .my-notes-page .my-note-item,
+:root[data-theme="dark"] .my-notes-page .note-row,
+:root[data-theme="dark"] .my-notes-page .resource-row {
+  background: #243249 !important;
+  color: #f1f5ff !important;
+  border-color: #3b4b65 !important;
+}
+
+/* Resource names and details */
+:root[data-theme="dark"] .my-notes-page .my-note-item h3,
+:root[data-theme="dark"] .my-notes-page .my-note-item h4,
+:root[data-theme="dark"] .my-notes-page .note-row h3,
+:root[data-theme="dark"] .my-notes-page .resource-row h3 {
+  color: #f1f5ff !important;
+}
+
+:root[data-theme="dark"] .my-notes-page .my-note-item p,
+:root[data-theme="dark"] .my-notes-page .my-note-item span,
+:root[data-theme="dark"] .my-notes-page .note-row p,
+:root[data-theme="dark"] .my-notes-page .resource-row p {
+  color: #bdc9dc !important;
+}
+
+/* Dashboard chart labels */
+:root[data-theme="dark"] .dashboard-page .resource-chart,
+:root[data-theme="dark"] .dashboard-page .chart-container {
+  color: #f1f5ff !important;
+}
+
+:root[data-theme="dark"] .dashboard-page .resource-chart .chart-label,
+:root[data-theme="dark"] .dashboard-page .chart-container .chart-label {
+  color: #bdc9dc !important;
+}
+
+/* Keep sidebar selection readable */
+:root[data-theme="dark"] .dashboard-sidebar .sidebar-link.active,
+:root[data-theme="dark"] .my-notes-sidebar .my-notes-nav-link.active {
+  background: #34435f !important;
+  color: #ffffff !important;
+}
+
+/* Dashboard snapshot highlight card */
+:root[data-theme="dark"] .dashboard-page .most-downloaded,
+:root[data-theme="dark"] .dashboard-page .most-downloaded-card {
+  background: #303f5b !important;
+  color: #f1f5ff !important;
+}
