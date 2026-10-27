@@ -1,0 +1,2 @@
+# StudyHub
+Study hub project
